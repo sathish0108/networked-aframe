@@ -42,14 +42,7 @@
       AFRAME.registerComponent("model-changer", {
         init: function() {
 
-          this.nametag = this.el.querySelector('.nametag');
 
-this.ownedByLocalUser = this.el.id === 'player';
-if (this.ownedByLocalUser) {
-  // populate the html overlay with the correct name on init
-  this.nametagInput = document.getElementById('username-overlay');
-  this.nametagInput.value = this.data.name;
-}
           const Avatargrey = document.getElementById("avatar1")
           const Avatarred = document.getElementById("avatar2")
 
@@ -65,10 +58,7 @@ if (this.ownedByLocalUser) {
             this.el.setAttribute("gltf-model", getAssetSrc("fox"))
           })
         },
-        update: function () {
       
-          if (this.nametag) this.nametag.setAttribute('value', this.data.name);
-        }
       });
     </script>
 
@@ -83,11 +73,7 @@ if (this.ownedByLocalUser) {
       <div class="medium" id="mdcontainer">
 
 
-        <input
-        id="username-overlay" required
-        style="z-index: 100; top: 250px; right: 50%; position: fixed"
-        oninput="document.getElementById('player').setAttribute('player-info', 'name', this.value)"
-      />
+      
       <img id="avatar1" src="avatar1.PNG"
         width="25px"/>
       <img id="avatar2" src="avatar2.PNG"/>
@@ -116,14 +102,7 @@ if (this.ownedByLocalUser) {
         <template id="avatar-template">
           <a-entity class="avatar">
             <a-entity class="model" position="0 -1.411 -0.357" rotation="0 180 0" gltf-model>
-              <a-text
-              class="nametag"
-              value="?"
-              rotation="0 180 0"
-              position=".25 -.35 0"
-              side="double"
-              scale=".5 .5 .5"
-            ></a-text>
+        
             </a-entity>
             <!-- <a-sphere class="head"
               scale="0.45 0.5 0.4"
